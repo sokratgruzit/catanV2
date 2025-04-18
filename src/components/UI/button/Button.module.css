@@ -1,0 +1,22 @@
+/* Custom button */
+.btn {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  height: 70px;
+  width: 200px;
+  z-index: 10000;
+}
+
+.btn span {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+

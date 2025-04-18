@@ -12,8 +12,3 @@ export type WalletData = [
         type: string,
     }
 ];
-
-
-export type ActiveTabTypes = {
-    activeTab: 'sign_up' | 'sign_in' | 'unfinished_account' | false;
-};

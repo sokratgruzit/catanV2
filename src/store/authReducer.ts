@@ -3,23 +3,16 @@ import { AuthState } from '../types/interfaces';
 
 const INIT_STATE: AuthState = {
   username: '',
-  address: '123333333333333333333333333',
+  address: '',
   access_token: '',
   roles: '',
   avatar: 'avatar.jpg',
-  _id: '',
-  email: 'tavadzed@gmail.com',
+  id: '',
+  email: '',
   gameStarted: false,
-  isConnected: false,
-  providerType: '',
-  chainId: '',
-  otpEnabled: false,
-  connectionError: '',
   balance: 0,
   demoBalance: 0,
-  triedReconnect: false,
-  verified: false,
-  switchAccount: false,
+  switchAccount: false
 };
 
 const authReducer = createSlice({
@@ -39,20 +32,13 @@ const authReducer = createSlice({
         access_token: '',
         roles: '',
         avatar: '',
-        _id: '',
+        id: '',
         email: '',
         gameStarted: false,
         address: '',
-        isConnected: false,
-        providerType: '',
-        chainId: '',
-        otpEnabled: false,
-        connectionError: '',
         balance: 0,
         demoBalance: 0,
-        triedReconnect: false,
-        verified: false,
-        switchAccount: false,
+        switchAccount: false
       };
     },
     setNewAccessToken: (state, action: PayloadAction<{ access_token: string }>) => {

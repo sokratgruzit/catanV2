@@ -3,22 +3,46 @@ export interface AuthState {
   access_token?: string;
   roles?: string;
   avatar?: string;
-  _id?: string;
+  id?: string;
   email?: string;
   gameStarted?: boolean;
-  isConnected?: boolean;
-  providerType?: string;
   address?: string | null | undefined;
-  chainId?: number | string;
-  otpEnabled?: boolean;
-  connectionError?: string;
   balance?: number | bigint;
   demoBalance?: number | bigint;
-  triedReconnect?: boolean;
-  verified?: boolean;
-  verificationCode?: string;
   switchAccount?: boolean;
 }
+
+export interface Hexagon3DProps {
+  showAuth?: boolean;
+  skip?: boolean;
+  status?: boolean;
+}
+
+export interface HexagonProps {
+  skip?: boolean;
+  showAuth?: boolean;
+  status?: boolean; 
+}
+
+export interface HexagonTextProps {
+  children?: React.ReactNode;
+  config?: any; 
+  font?: string;
+  rotation?: [number, number, number];
+  position?: [number, number, number];
+}
+
+export interface ButtonProps {
+  color?: string;
+  onClick?: () => void;
+  title: string;
+  customStyles?: any;
+  className?: string;
+  width?: number;
+  height?: number;
+}
+
+//end new
 
 export interface TransactionObject {
   from: string;
@@ -227,57 +251,57 @@ export interface TradeProps {
   setOpenCounterOffer: (value: string) => void;
 }
 
-export interface ResourcesProps {
-  incrementHandler: () => void;
-  decrementHandler: () => void;
-  card: number;
-  src?: string;
-  svgStrock?: JSX.Element;
-  svgShadow?: JSX.Element;
-  type?: string;
-}
+// export interface ResourcesProps {
+//   incrementHandler: () => void;
+//   decrementHandler: () => void;
+//   card: number;
+//   src?: string;
+//   svgStrock?: JSX.Element;
+//   svgShadow?: JSX.Element;
+//   type?: string;
+// }
 
-export interface ToBankProps {
-  incrementIWantFromBank: (resource: keyof TradeToBank["iWant"]) => void;
-  decrementIWantFromBank: (resource: keyof TradeToBank["iWant"]) => void;
-  data: {
-    resource: any;
-    img: string;
-    myCards: number;
-    othersCards: number;
-    bankCards: number;
-    svgStrock: JSX.Element;
-    svgShadow: JSX.Element;
-  }[];
-}
+// export interface ToBankProps {
+//   incrementIWantFromBank: (resource: keyof TradeToBank["iWant"]) => void;
+//   decrementIWantFromBank: (resource: keyof TradeToBank["iWant"]) => void;
+//   data: {
+//     resource: any;
+//     img: string;
+//     myCards: number;
+//     othersCards: number;
+//     bankCards: number;
+//     svgStrock: JSX.Element;
+//     svgShadow: JSX.Element;
+//   }[];
+// }
 
-export interface ToOthersProps {
-  incrementIWantFromPlayers: (resource: keyof TradeToOthers["iWant"]) => void;
-  decrementIWantFromPlayers: (resource: keyof TradeToOthers["iWant"]) => void;
-  data: {
-    resource: any;
-    img: string;
-    myCards: number;
-    bankCards: number;
-    othersCards: number;
-    svgStrock: JSX.Element;
-    svgShadow: JSX.Element;
-  }[];
-}
+// export interface ToOthersProps {
+//   incrementIWantFromPlayers: (resource: keyof TradeToOthers["iWant"]) => void;
+//   decrementIWantFromPlayers: (resource: keyof TradeToOthers["iWant"]) => void;
+//   data: {
+//     resource: any;
+//     img: string;
+//     myCards: number;
+//     bankCards: number;
+//     othersCards: number;
+//     svgStrock: JSX.Element;
+//     svgShadow: JSX.Element;
+//   }[];
+// }
 
-export interface MyResourcesProps {
-  incrementIGiveHandler: (resource: keyof TradeToOthers["iGive"]) => void;
-  decrementIGiveHandler: (resource: keyof TradeToOthers["iGive"]) => void;
-  data: {
-    resource: any;
-    img: string;
-    myCards: number;
-    othersCards: number;
-    bankCards: number;
-    svgStrock: JSX.Element;
-    svgShadow: JSX.Element;
-  }[];
-}
+// export interface MyResourcesProps {
+//   incrementIGiveHandler: (resource: keyof TradeToOthers["iGive"]) => void;
+//   decrementIGiveHandler: (resource: keyof TradeToOthers["iGive"]) => void;
+//   data: {
+//     resource: any;
+//     img: string;
+//     myCards: number;
+//     othersCards: number;
+//     bankCards: number;
+//     svgStrock: JSX.Element;
+//     svgShadow: JSX.Element;
+//   }[];
+// }
 
 export interface Responder {
   player: string;
@@ -395,12 +419,4 @@ export interface SlotProps {
   index?: number;
 }
 
-export interface ButtonProps {
-  color?: string;
-  onClick?: () => void;
-  title: string;
-  customStyles?: any;
-  className?: string;
-  width?: number;
-  height?: number;
-}
+
