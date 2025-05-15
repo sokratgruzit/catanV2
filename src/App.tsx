@@ -6,6 +6,8 @@ import { RequireAuth } from "./components/auth/RequireAuth";
 import { Unauthorized } from "./components/auth/Unauthorized";
 import { Auth } from "./components/auth/Auth";
 import { Layout } from "./components/layout/Layout";
+import { AboutGame } from "./components/about/AboutGame";
+import { FAQ } from "./components/faq/FAQ";
 
 import "./assets/css/main.css";
 import styles from "./App.module.css";
@@ -26,6 +28,8 @@ function App() {
           <Route path="/" element={<Unauthorized />} />
           <Route element={<RequireAuth />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/about-game" element={<AboutGame />} />
+            <Route path="/faq" element={<FAQ />} />
           </Route>
         </Route>
       </Routes>
